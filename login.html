@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.md5.js"></script>
+</head>
+<body>
+<div class="login">
+  <div class="header">
+    <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);"
+                                       tabindex="7">登&nbsp;录</a> <a class="switch_btn" id="switch_login"
+                                                                    href="javascript:void(0);" tabindex="8">注&nbsp;册</a>
+      <div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 66px; left: 0px;"></div>
+    </div>
+  </div>
+  <div class="web_qr_login" id="web_qr_login" style="display: block; height: 285px;">
+    <!--登录-->
+    <div class="web_login" id="web_login">
+      <div class="login-box">
+        <div class="login_form">
+          <div class="uinArea" id="uinArea"><span class="input-tips username" for="username"><i></i></span>
+            <div class="inputOuter" id="uArea">
+              <input type="text" id="username" name="username" class="inputstyle" placeholder="用户名">
+            </div>
+          </div>
+          <div class="pwdArea" id="pwdArea"><span class="input-tips password" for="password"><i></i></span>
+            <div class="inputOuter" id="pArea">
+              <input type="password" id="password" name="password" class="inputstyle" placeholder="密码">
+            </div>
+          </div>
+          <div id="userCue1" class="common-error-msg-container"></div>
+          <div class="button-container">
+            <input type="submit" value="立即登录" class="button_blue button_login" id="login">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--登录end-->
+  </div>
+  <!--注册-->
+  <div class="qlogin" id="qlogin" style="display: none; height: 435px;">
+    <div class="web_login">
+      <div class="login_form">
+        <div class="uinArea" id="uinArea"><span class="input-tips username" for="user"><i></i></span>
+          <div class="inputOuter2" id="uArea">
+            <input type="text" id="u" name="u" class="inputstyle" maxlength="16"
+                   placeholder="用户名3-15位字符">
+          </div>
+        </div>
+        <div class="regArea"><span class="input-tips password" for="passwd"><i></i></span>
+          <div class="inputOuter2">
+            <input type="password" id="p" name="p" class="inputstyle" maxlength="16" placeholder="密码">
+          </div>
+        </div>
+        <div id="userCue" class="common-error-msg-container"></div>
+        <div class="button-container">
+          <input type="button" id="reg" class="button_blue button_reg" value="免费注册">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--注册end-->
+  <div class="footer"></div>
+</div>
+<script>
+  $(function () {
+    $('#switch_qlogin').click(function () {
+      $('#switch_login').removeClass("switch_btn_focus").addClass('switch_btn');
+      $('#switch_qlogin').removeClass("switch_btn").addClass('switch_btn_focus');
+      $('#switch_bottom').animate({left: '0px', width: '66px'});
+      $('#qlogin').css('display', 'none');
+      $('#web_qr_login').css('display', 'block');
+      try {
+        parent.layer.iframeAuto(parent.layer.getFrameIndex(window.name));
+      } catch (e) {
+      }
+    });
+    $('#switch_login').click(function () {
+
+      $('#switch_login').removeClass("switch_btn").addClass('switch_btn_focus');
+      $('#switch_qlogin').removeClass("switch_btn_focus").addClass('switch_btn');
+      $('#switch_bottom').animate({left: '152px', width: '66px'});
+
+      $('#qlogin').css('display', 'block');
+      $('#web_qr_login').css('display', 'none');
+      try {
+        parent.layer.iframeAuto(parent.layer.getFrameIndex(window.name));
+      } catch (e) {
+      }
+    });
+  });
+
+  function logintab() {
+    scrollTo(0);
+    $('#switch_qlogin').removeClass("switch_btn_focus").addClass('switch_btn');
+    $('#switch_login').removeClass("switch_btn").addClass('switch_btn_focus');
+    $('#switch_bottom').animate({left: '152px', width: '66px'});
+    $('#qlogin').css('display', 'none');
+    $('#web_qr_login').css('display', 'block');
+  }
+
+  function checkusername(username) {
+    username = $.trim(username);
+    if (username == '') {
+      layer.msg('用户名不能为空！', {shift: 6});
+      $("#username").focus();
+      return false;
+    }
+    return true;
+  }
+
+  function checkpassword(pw) {
+    pw = $.trim(pw);
+
+    if (pw == '') {
+      layer.msg('密码不能为空！', {shift: 6});
+      $("#password").focus();
+      return false;
+    }
+    return true;
+
+
+  }
+
+  function validates() {
+    if (!checkusername($("#username").val())) return false;
+    if (!checkpassword($("#password").val())) return false;
+  }
+
+  var pwdmin = 6;
+  $(document).ready(function () {
+    $('#reg').click(function () {
+      if ($.trim($('#u').val()) == "") {
+        $('#u').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue').html("<span color='red'><b>×用户名不能为空</b></span>");
+        return false;
+      }
+      var u = /[=|+-]/;
+      if (u.test($('#u').val())) {
+        $('#u').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue').html("<span color='red'><b>×用户名中不能包含+ | - =特殊字符</b></span>");
+        return false;
+      }
+      if ($('#u').val().length < 3 || $('#u').val().length > 15) {
+
+        $('#u').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue').html("<span color='red'><b>×用户名为3-15字符</b></span>");
+        return false;
+
+      }
+
+      if ($('#p').val().length < pwdmin) {
+        $('#p').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue').html("<span color='red'><b>×密码不能小于" + pwdmin + "位</b></span>");
+        return false;
+      } else {
+        $('#p').css({
+          border: "1px solid #D7D7D7",
+          boxShadow: "none"
+        });
+
+      }
+      $.ajax({
+        type: 'post',
+        url: 'http://103.233.96.157:888/api.user.login',
+        data:{
+          token:$.md5('1'+$('#u').val()+$('#p').val()+'11yiLJQWQl0aGMwnnd5cLF3bp07CYjQ5fqXWCYuqtfzY3DaTEu8brktjktfRdROI2HC6eIO'),
+          pid:'1',
+          Img_id:'1',
+          name:$('#u').val(),
+          passwd:$('#p').val(),
+          Tags:'1'
+        },
+        success:function (json) {
+          window.location.href = 'index.html';
+        },
+        error:function (json) {
+          alert('注册失败，请稍后重试');
+        }
+
+      })
+    });
+    $('#login').click(function () {
+      if ($.trim($('#username').val()) == "") {
+        $('#username').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue1').html("<span color='red'><b>×用户名不能为空</b></span>");
+        return false;
+      }
+      if ($.trim($('#password').val()) == "") {
+        $('#password').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue1').html("<span color='red'><b>×密码不能为空</b></span>");
+        return false;
+      }
+      $.ajax({
+        type:'post',
+        url:'http://103.233.96.157:888/api.user.login',
+        data:{
+          token:$.md5('1'+$('#username').val()+$('#password').val()+'1yiLJQWQl0aGMwnnd5cLF3bp07CYjQ5fqXWCYuqtfzY3DaTEu8brktjktfRdROI2HC6eIO'),
+          pid:'1',
+          name:$('#username').val(),
+          passwd:$('#password').val(),
+        },
+        success:function(json){
+          window.location.href = 'index.html';
+          console.log(json);
+        },
+        error:function (json) {
+          alert('登录失败，请稍后重试')
+        }
+      })
+    })
+  });
+</script>
+</body>
+</html>

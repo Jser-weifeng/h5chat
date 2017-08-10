@@ -1,0 +1,154 @@
+.tophead{height: 1.35rem; background:-webkit-linear-gradient(top,#523e20 ,#222222)}
+.tophead #logo{float:left;height: 1.35rem;}
+.tophead .tophdppy{float: right; height: 1.35rem; line-height: .2rem;}
+.tophead .tophdppy .login{font-size: .26rem; color:#f8b62c; margin-right: .2rem; }
+.mobaomat{height: 1rem;}
+.mobaomat>div{height: 100%;}
+.mobaomat .ppbaomad{height: 100%;}
+.mobaomat .ppbaomad .ppbaomadz{height: .85rem; float:left; margin-right: .1rem;}
+.mobaomat .ppbaomad .ppbaomadz>img{height: 100%;float: left;}
+.mobaomat .ppbaomad .ppbaomady{font-size: .24rem;}
+.mobaomat .ppbaomad .ppbaomady .ppbaomadyt{margin: .1rem 0;}
+.mobaomat .ppbaomad .ppbaomady .bjpk10-countdown{float:right;}
+.mobaomab ul{display: -webkit-flex;display: flex;overflow: hidden ; line-height: .6rem; height: .6rem;}
+.mobaomab ul li{flex: 1; font-size: .24rem; line-height: .6rem; text-align: center; background: #006699; color: #ffffff;}
+.mobaomab ul li.active{background: red;}
+.tab-content .top{background: none repeat scroll 0 0;  color: #fff;  font-size: 13px;  height: 24px;  line-height: 24px;  overflow: hidden;  background-color: rgba(0,0,0,.5);  width: 100%;  z-index: 9998;}
+.publicChat .msg{ float: left; margin-bottom: 2px; font-size: 13px; position: relative;}
+.publicChat .msg .msg_head{float: left;
+    width: 40px;
+    margin: 7px 3px 0 0;
+    position: absolute;}
+.publicChat .msg .msg_head img{width: 38px;
+    height: 38px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;}
+.publicChat .msg .msg_content{float: left;
+    margin-left: 45px;}
+.publicChat .msg .msg_content .layim_chatsay{
+    min-height: 21px;
+    position: relative;
+    float: left;
+    line-height: 20px;
+    border-radius: 3px;
+    clear: both;
+    color: #606060;
+    z-index: 100;
+    padding: 6px 12px 6px;
+    background: #eaeaea none repeat scroll 0 0;
+    margin: 13px 0;
+    max-width: 263px;
+}
+.publicChat .msg .msg_content .layim_chatsay::before{
+    content: "";
+    border-color: #eaeaea transparent;
+    border-style: solid;
+    border-width: 0 5px 7px;
+    display: block;
+    position: absolute;
+    width: 0;
+    top: -6px;
+}
+.history-hr-wrap{position: relative;
+     bottom: 0;
+     margin-top: 4px;
+     text-align: center;
+     color: #ccc;
+     font-size: 12px;padding: 20px 30px;}
+ .history-hr-wrap .history-hr{background: rgba(0,0,0,.3);}
+ .history-hr-wrap .history-hr-text{color: #969696!important;
+     font-size: 12px;
+     text-align: center;
+     width: 120px;
+     margin: -7px auto 0;
+     background: rgba(0,0,0,.2);
+     border-radius: 20px;
+     padding: 2px 10px;
+     display: inline-block;
+ }
+ .ppmokefu{position: fixed;
+     right: 5px;
+     z-index: 99999;
+     top: 50%;
+     width: 40px;
+     height: 40px;}
+ .ppmokefu img{width: 100%;}
+ .signin-container{position: fixed;
+     bottom: 114px;
+     width: 33px;
+     right: 6px;
+     height: 33px;
+     border-radius: 17px;
+     z-index: 9999;}
+ .signin-container img{width: 100%;}
+#expectbjpk10 span,#expectcqssc span,#expectxjssc span{float:left;margin-right:3px;width:21px;height:21px;text-align:center;line-height:21px;color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:14px}
+.bjpk10_no1{background:red}
+.bjpk10_no2{background:#008fff}
+.bjpk10_no3{background:#4b4b4b}
+.bjpk10_no4{background:#ff7600}
+.bjpk10_no5{background:#237c7d}
+.bjpk10_no6{background:#5234ff}
+.bjpk10_no7{background:#5f5a5a}
+.bjpk10_no8{background:#ff2600}
+.bjpk10_no9{background:#780b00}
+.bjpk10_no10{background:#098504}
+
+#footer{position: fixed;
+bottom: 0;
+width: 100%;
+height: 40px;
+background-color: #FFF;
+z-index: 99999;
+display: block;}
+.more-function{float: right;
+margin-top: 9px;
+margin-right: 9px;
+    height: 31px;
+}
+.more-function img {
+    width: 26px;
+    height: 26px;
+    float: left;
+}
+.sendBtn {
+    float: right;
+    margin-top: 6px;
+    margin-right: 11px;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f8b62c;
+    color: #FFF;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.smile {
+     float: left;
+     margin-top: 9px;
+     margin-right: 2px;
+     margin-left: 9px;
+    height: 31px;
+ }
+.smile img{float:left;}
+.editor {
+    margin-top: 3px;
+    height: 32px;
+    padding: 2px 2px 0 2px;
+    background-color: #FFF;
+    margin-left: 37px;
+    margin-right: 100px;
+    width: auto;
+}
+.messageEditor {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 30px;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    line-height: 30px;
+    overflow: auto;
+    font-size: .24rem;
+}

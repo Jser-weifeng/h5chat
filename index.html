@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-use-rem="640">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="js/rem.js"></script>
+<article>
+    <section id="#head_1">
+        <section class="video-container">
+            <div class="tophead">
+                <div id="logo"><img src="image/201708070830107991.png"></div>
+                <div class="tophdppy">
+                    <a href="login.html" target="_self" class="login">注册/登陆</a>
+                </div>
+            </div>
+            <script type="text/javascript">
+                function nTabs(thisObj, Num) {
+                    if (thisObj.className == "active") return;
+                    var tabObj = thisObj.parentNode.id;
+                    var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+                    for (i = 0; i < tabList.length; i++) {
+                        if (i == Num) {
+                            thisObj.className = "active";
+                            document.getElementById(tabObj + "_Content" + i).style.display = "block";
+                        } else {
+                            tabList[i].className = "normal";
+                            document.getElementById(tabObj + "_Content" + i).style.display = "none";
+                        }
+                    }
+                }
+            </script>
+            <div class="mobaoma">
+                <div class="mobaomat">
+                    <div id="myTab0_Content0" style="display: block;">
+                        <div class="ppbaomad"><!-- bjpk10 -->
+                            <div class="ppbaomadz"><img src="image/1a.png"></div>
+                            <div class="ppbaomady">
+                                <div class="ppbaomadyt">
+                                    <span id="bjpk10-expect">100000</span>期<span class="y bjpk10-countdown">距下期还有:<span
+                                        id="kjbjpk10-next-h" class="none">00时</span><span id="kjbjpk10-next-m">00</span>分<span
+                                        id="kjbjpk10-next-s">00</span>秒</span><span
+                                        class="y none bjpk10-lottery-time"></span>
+                                </div>
+                                <div class="ppbaomadyb" id="expectbjpk10">
+                                    <span class="bjpk10_no9">9</span><span class="bjpk10_no2">2</span><span
+                                        class="bjpk10_no10">10</span><span class="bjpk10_no4">4</span><span
+                                        class="bjpk10_no6">6</span><span class="bjpk10_no5">5</span><span
+                                        class="bjpk10_no1">1</span><span class="bjpk10_no3">3</span><span
+                                        class="bjpk10_no8">8</span><span class="bjpk10_no7">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myTab0_Content1" class="none">
+                        <div class="ppbaomad"><!-- cqssc -->
+                            <div class="ppbaomadz"><img src="image/1a.png"></div>
+                            <div class="ppbaomady">
+                                <div class="ppbaomadyt">
+                                    <span id="bjpk10-expect">22222222222</span>期<span
+                                        class="y bjpk10-countdown">距下期还有:<span
+                                        id="kjbjpk10-next-h" class="none">00时</span><span id="kjbjpk10-next-m">00</span>分<span
+                                        id="kjbjpk10-next-s">00</span>秒</span><span
+                                        class="y none bjpk10-lottery-time"></span>
+                                </div>
+                                <div class="ppbaomadyb" id="expectbjpk10">
+                                    <span class="bjpk10_no9">9</span><span class="bjpk10_no2">2</span><span
+                                        class="bjpk10_no10">10</span><span class="bjpk10_no4">4</span><span
+                                        class="bjpk10_no6">6</span><span class="bjpk10_no5">5</span><span
+                                        class="bjpk10_no1">1</span><span class="bjpk10_no3">3</span><span
+                                        class="bjpk10_no8">8</span><span class="bjpk10_no7">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myTab0_Content2" class="none">
+                        <div class="ppbaomad"><!-- hk6 -->
+                            <div class="ppbaomadz"><img src="image/1a.png"></div>
+                            <div class="ppbaomady">
+                                <div class="ppbaomadyt">
+                                    <span id="bjpk10-expect">3333333</span>期<span class="y bjpk10-countdown">距下期还有:<span
+                                        id="kjbjpk10-next-h" class="none">00时</span><span id="kjbjpk10-next-m">00</span>分<span
+                                        id="kjbjpk10-next-s">00</span>秒</span><span
+                                        class="y none bjpk10-lottery-time"></span>
+                                </div>
+                                <div class="ppbaomadyb" id="expectbjpk10">
+                                    <span class="bjpk10_no9">9</span><span class="bjpk10_no2">2</span><span
+                                        class="bjpk10_no10">10</span><span class="bjpk10_no4">4</span><span
+                                        class="bjpk10_no6">6</span><span class="bjpk10_no5">5</span><span
+                                        class="bjpk10_no1">1</span><span class="bjpk10_no3">3</span><span
+                                        class="bjpk10_no8">8</span><span class="bjpk10_no7">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myTab0_Content3" class="none">
+                        <div class="ppbaomad"><!-- jsk3 -->
+                            <div class="ppbaomadz"><img src="image/1a.png"></div>
+                            <div class="ppbaomady">
+                                <div class="ppbaomadyt">
+                                    <span id="bjpk10-expect">444444444444</span>期<span class="y bjpk10-countdown">距下期还有:<span
+                                        id="kjbjpk10-next-h" class="none">00时</span><span id="kjbjpk10-next-m">00</span>分<span
+                                        id="kjbjpk10-next-s">00</span>秒</span><span
+                                        class="y none bjpk10-lottery-time"></span>
+                                </div>
+                                <div class="ppbaomadyb" id="expectbjpk10">
+                                    <span class="bjpk10_no9">9</span><span class="bjpk10_no2">2</span><span
+                                        class="bjpk10_no10">10</span><span class="bjpk10_no4">4</span><span
+                                        class="bjpk10_no6">6</span><span class="bjpk10_no5">5</span><span
+                                        class="bjpk10_no1">1</span><span class="bjpk10_no3">3</span><span
+                                        class="bjpk10_no8">8</span><span class="bjpk10_no7">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myTab0_Content4" class="none">
+                        <div class="ppbaomad"><!-- gdklsf -->
+                            <div class="ppbaomadz"><img src="image/1a.png"></div>
+                            <div class="ppbaomady">
+                                <div class="ppbaomadyt">
+                                    <span id="bjpk10-expect">555555555</span>期<span
+                                        class="y bjpk10-countdown">距下期还有:<span
+                                        id="kjbjpk10-next-h" class="none">00时</span><span id="kjbjpk10-next-m">00</span>分<span
+                                        id="kjbjpk10-next-s">00</span>秒</span><span
+                                        class="y none bjpk10-lottery-time"></span>
+                                </div>
+                                <div class="ppbaomadyb" id="expectbjpk10">
+                                    <span class="bjpk10_no9">9</span><span class="bjpk10_no2">2</span><span
+                                        class="bjpk10_no10">10</span><span class="bjpk10_no4">4</span><span
+                                        class="bjpk10_no6">6</span><span class="bjpk10_no5">5</span><span
+                                        class="bjpk10_no1">1</span><span class="bjpk10_no3">3</span><span
+                                        class="bjpk10_no8">8</span><span class="bjpk10_no7">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobaomab">
+                    <ul id="myTab0">
+                        <li class="active" onclick="nTabs(this,0);">北京PK10</li>
+                        <li class="normal" onclick="nTabs(this,1);">重庆时时彩</li>
+                        <li class="normal" onclick="nTabs(this,2);">香港彩</li>
+                        <li class="normal" onclick="nTabs(this,3);">江苏快3</li>
+                        <li class="normal" onclick="nTabs(this,4);">广东快乐十分</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="video-show-wrap" style="display:none"><a id="video-show" class="videoShow"
+                                                                 href="javascript:void(0);"></a></section>
+    </section>
+    <section class="tab-content">
+        <div class="top" id="announcement">
+            <marquee scrollamount="3" id="msg_tip_show">
+                <span style="color:white"><span
+                        style="font-size: 13px; line-height: 20px; background-color: rgba(0, 0, 0, 0.298039);">欢迎来到大发彩票聊天室，本聊天室将不定时发放红包福利，您与红包只相差一个账号喔，另有大神计划带你赢不停，惊喜多多，欢乐多多，尽请期待喔！</span></span>
+            </marquee>
+            <div id="video-hide" class="videoHide"><img src="btn-eye.png" width="20px" height="20px"></div>
+        </div>
+        <div class="weui-gallery" id="gallery"><span class="weui-gallery__img" id="galleryImg"></span></div>
+        <div id="publicChat" class="publicChat" style="overflow-y: auto; display: block;">
+            <div style="font-size: .24rem; text-align: center;">暂无消息</div>
+            <!--<div style="clear:both;"></div>-->
+            <!--<div class="history-hr-wrap">-->
+                <!--<div class="history-hr"></div>-->
+                <!--<div class="history-hr-text">以上是历史消息</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ppmokefu"><a href=""
+                                 target="_blank"><img src="image/kefu.png"></a></div>
+        <div class="signin-container"><img src="image/signin-icon.png"></div>
+    </section>
+</article>
+<div id="footer" style="display: block; bottom: 0px;">
+    <div class="more-function" id="moreFunction"><img src="image/add.png"></div>
+    <div class="sendBtn fr" id="sendBtn">发送</div>
+    <!-- <div id="sharedBtn"> <span>分享</span> </div> -->
+    <div class="smile"><img src="image/smile.png" alt="表情" width="26px" height="26px"></div>
+    <div id="editor" class="editor">
+        <div class="messageEditor" id="messageEditor" contenteditable="true"></div>
+    </div>
+</div>
+<script>
+    $(function () {
+        function sokectInit(uid){
+            var ws = new WebSocket("ws://103.233.96.157:9002/pid=1/uid="+uid+"/token=a20ea00c139f5791b6bc983c64edaf9a");
+            /*
+             *监听三种状态的变化 。js会回调
+             */
+            ws.onopen = function(message) {
+
+            };
+            ws.onclose = function(message) {
+
+            };
+            ws.onmessage = function(message) {
+                showMessage(message.data);
+            };
+            //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+            window.onbeforeunload = function() {
+                ws.close();
+            };
+            $('#sendBtn').click(function(){
+                send();
+            })
+            function send() {
+                var value = $('#messageEditor').html();
+//                ws.send(value);
+                $('#messageEditor').html('');
+            }
+            function showMessage(message) {
+                if(message !== '连接成功'){
+                    var msg = JSON.parse(message);
+                    var str = '';
+                    switch (msg.message_type.toString()){
+                        case '1':
+                            str += '<div style="clear:both;"></div><div class="msg notmine " id="febc888d"><div class="msg_head"><img src="image/null.jpg" class="msg_group_ico"></div><div class="msg_content"><div><span class="u">'+msg.message_data.send_name+'</span>&nbsp;&nbsp; <span class="date">15:47:07</span></div><div class="layim_chatsay"><span>'+msg.message_data.contents+'</span></div></div></div><div style="clear:both;"></div>';
+                            break;
+                        case '2':
+                            console.log(msg);
+//                            str += '<div style="clear:both;"></div><div class="msg notmine " id="febc888d"><div class="msg_head"><img src="image/null.jpg" class="msg_group_ico"></div><div class="msg_content"><div><span class="u">\'+msg.message_data.send_name+\'</span>&nbsp;&nbsp; <span class="date">15:47:07</span></div><div class="layim_chatsay"><span>\'+msg.message_data.contents+\'</span></div></div></div><div style="clear:both;"></div>'
+                            break;
+                        case '3':
+                            break;
+                        case '4':
+                            break;
+                    }
+                    $('#publicChat').html(str);
+                }
+            }
+        }
+        var uid = localStorage.getItem('uid')?localStorage.getItem('uid'):1;
+        sokectInit(uid);
+    })
+</script>
+</body>
+</html>
