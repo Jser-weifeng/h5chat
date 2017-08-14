@@ -213,20 +213,23 @@
       })
 
       function send() {
+        console.log(uid);
         var value = $('#messageEditor').html();
+        var nickname = localStorage.getItem('nickname')?localStorage.getItem('nickname'):'游客';
         var obj = {
           "message_type":1,
           "message_data":{
             "send_uid":uid,
             "send_img":1,
-            "send_name":"aaa",
+            "send_name":nickname,
             "letter_type":2,
             "to_uid":2,
             "to_name":"",
             "contents":value,
-            "tags":"1,2,3"
+            "tags":"1"
           }
         }
+        console.log(obj);
         ws.send(JSON.stringify(obj));
         $('#messageEditor').html('');
       }
@@ -248,7 +251,7 @@
       }
     }
 
-    var uid = localStorage.getItem('uid') ? localStorage.getItem('uid') : 1;
+    var uid = localStorage.getItem('uid') ? localStorage.getItem('uid') : 0;
     sokectInit(uid);
   })
 </script>

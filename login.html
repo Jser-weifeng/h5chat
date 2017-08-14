@@ -16,7 +16,8 @@
   <div class="header">
     <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);"
                                        tabindex="7">登&nbsp;录</a> <a class="switch_btn" id="switch_login"
-                                                                    href="javascript:void(0);" tabindex="8">注&nbsp;册</a>
+                                                                    href="javascript:void(0);"
+                                                                    tabindex="8">注&nbsp;册</a>
       <div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 66px; left: 0px;"></div>
     </div>
   </div>
@@ -52,6 +53,12 @@
           <div class="inputOuter2" id="uArea">
             <input type="text" id="u" name="u" class="inputstyle" maxlength="16"
                    placeholder="用户名3-15位字符">
+          </div>
+        </div>
+        <div class="uinArea" id="uinArea1"><span class="input-tips username" for="user"><i></i></span>
+          <div class="inputOuter2" id="uArea1">
+            <input type="text" id="nick" name="nick" class="inputstyle" maxlength="16"
+                   placeholder="昵称">
           </div>
         </div>
         <div class="regArea"><span class="input-tips password" for="passwd"><i></i></span>
@@ -164,7 +171,14 @@
         return false;
 
       }
-
+      if ($.trim($('#nick').val()) == "") {
+        $('#nick').focus().css({
+          border: "1px solid red",
+          boxShadow: "0 0 2px red"
+        });
+        $('#userCue').html("<span color='red'><b>×昵称不能为空</b></span>");
+        return false;
+      }
       if ($('#p').val().length < pwdmin) {
         $('#p').focus().css({
           border: "1px solid red",
@@ -181,19 +195,22 @@
       }
       $.ajax({
         type: 'post',
-        url: 'http://103.233.96.157:888/api.user.login',
-        data:{
-          token:$.md5('1'+$('#u').val()+$('#p').val()+'11yiLJQWQl0aGMwnnd5cLF3bp07CYjQ5fqXWCYuqtfzY3DaTEu8brktjktfRdROI2HC6eIO'),
-          pid:'1',
-          Img_id:'1',
-          name:$('#u').val(),
-          passwd:$('#p').val(),
-          Tags:'1'
+        url: 'http://103.233.96.157:888/api.user.register',
+        data: {
+          token: $.md5('1' + $('#u').val()+ $('#nick').val() + $('#p').val() + '110yiLJQWQl0aGMwnnd5cLF3bp07CYjQ5fqXWCYuqtfzY3DaTEu8brktjktfRdROI2HC6eIO'),
+          pid: '1',
+          img_id: '1',
+          name: $('#u').val(),
+          passwd: $('#p').val(),
+          tags: '1',
+          nickname: $('#nick').val()
         },
-        success:function (json) {
+        success: function (json) {
+          localStorage.setItem('uid',json.data.id);
+          localStorage.setItem('nickname',json.data.nickname);
           window.location.href = 'index.html';
         },
-        error:function (json) {
+        error: function (json) {
           alert('注册失败，请稍后重试');
         }
 
@@ -217,19 +234,20 @@
         return false;
       }
       $.ajax({
-        type:'post',
-        url:'http://103.233.96.157:888/api.user.login',
-        data:{
-          token:$.md5('1'+$('#username').val()+$('#password').val()+'1yiLJQWQl0aGMwnnd5cLF3bp07CYjQ5fqXWCYuqtfzY3DaTEu8brktjktfRdROI2HC6eIO'),
-          pid:'1',
-          name:$('#username').val(),
-          passwd:$('#password').val(),
+        type: 'post',
+        url: 'http://103.233.96.157:888/api.user.login',
+        data: {
+          token: $.md5($('#username').val() + $('#password').val() + '10yiLJQWQl0aGMwnnd5cLF3bp07CYjQ5fqXWCYuqtfzY3DaTEu8brktjktfRdROI2HC6eIO'),
+          pid: '1',
+          name: $('#username').val(),
+          passwd: $('#password').val(),
         },
-        success:function(json){
+        success: function (json) {
+          localStorage.setItem('uid',json.data.id);
+          localStorage.setItem('nickname',json.data.nickname);
           window.location.href = 'index.html';
-          console.log(json);
         },
-        error:function (json) {
+        error: function (json) {
           alert('登录失败，请稍后重试')
         }
       })
